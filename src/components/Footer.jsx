@@ -1,6 +1,5 @@
 import { GitHub, LinkedIn, Email } from "@mui/icons-material";
 import { AppBar, IconButton, Toolbar } from "@mui/material"
-import { Link } from "react-router-dom";
 
 export default function Footer() {
   return(
