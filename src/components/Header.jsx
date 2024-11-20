@@ -14,32 +14,30 @@ export default function HeaderNav() {
   return(
     <AppBar position="static">
       <Container maxWidth="x1">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters
+          sx={{
+            justifyContent: 'space-between'
+          }}
+        >
           <Typography variant="h4" 
             sx={{ 
-              py: 2,
               display: { xs: 'none', md: 'flex'} 
             }}
             >
               Reyanna Garibay
           </Typography>
-          <Box sx={{ 
-            // STRUGGLING WITH FLEXBOX, CANT GET TABS TO MOVE
-            }}
+          <Tabs
+            value={activeTab}
+            onChange={handleChange}
+            textColor="secondary"
+            indicatorColor="secondary"
+            aria-label="active tab color change"
           >
-            <Tabs
-              value={activeTab}
-              onChange={handleChange}
-              textColor="secondary"
-              indicatorColor="secondary"
-              aria-label="active tab color change"
-            >
-              <Tab label="Home" component={Link} to="/" />
-              <Tab label="About Me" component={Link} to="/about" />
-              <Tab label="Projects" component={Link} to="/projects" />
-              <Tab label="Contact Me" component={Link} to="/contact" />
-            </Tabs>
-          </Box>
+            <Tab label="Home" component={Link} to="/" />
+            <Tab label="About Me" component={Link} to="/about" />
+            <Tab label="Projects" component={Link} to="/projects" />
+            <Tab label="Contact Me" component={Link} to="/contact" />
+          </Tabs>
         </Toolbar>
       </Container>
     </AppBar>
